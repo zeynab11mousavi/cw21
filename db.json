@@ -16,9 +16,9 @@
       "done": "true"
     },
     {
-      "id": 4,
-      "text": "text4",
-      "done": "true"
+      "text": "new",
+      "done": false,
+      "id": 4
     }
   ]
 }
