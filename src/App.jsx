@@ -43,13 +43,17 @@ function App() {
   return (
     <div className="App">
       <h2>Todo List</h2>
-      <div>
-        <input
-          type="text"
-          onChange={(event) => setAdd(event.target.value)}
-          placeholder="add to do"
-        />
-        <button onClick={handleAdd}>add</button>
+      <div className="addNav">
+        <div>
+          <input
+            type="text"
+            onChange={(event) => setAdd(event.target.value)}
+            placeholder="add to do"
+          />
+        </div>
+        <button className="addbtn" onClick={handleAdd}>
+          add
+        </button>
       </div>
       <ul>
         {todos.map((todo) => (

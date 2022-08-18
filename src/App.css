@@ -11,9 +11,18 @@ body {
   align-items: center;
 }
 
-ul {
+ul,
+.addNav {
   list-style: none;
   width: 60%;
+}
+.addNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+input {
+  width: 500px;
 }
 
 li {
@@ -46,4 +55,9 @@ button {
 .textDone {
   color: green;
   text-decoration: line-through;
+}
+.addbtn {
+  padding: 5px;
+  width: 70px;
+  margin: 0 1rem;
 }
