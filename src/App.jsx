@@ -54,7 +54,11 @@ function App() {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            <span>{todo.text}</span>
+            {todo.done ? (
+              <span className="textDone">{todo.text}</span>
+            ) : (
+              <span>{todo.text}</span>
+            )}
             <div className="buttonHolder">
               {todo.done ? (
                 <button className="done" onClick={() => handleDone(todo.id)}>
