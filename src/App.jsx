@@ -1,6 +1,12 @@
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchTodos, createTodos } from './redux/feature/todoSlice'
+import {
+  fetchTodos,
+  createTodos,
+  deleteTodos,
+  changeDone,
+  changeNotDone,
+} from './redux/feature/todoSlice'
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -14,6 +20,20 @@ function App() {
       dispatch(fetchTodos())
       setAdd('')
     }
+  }
+
+  const handleRemove = (id) => {
+    dispatch(deleteTodos(id))
+    dispatch(fetchTodos())
+  }
+
+  const handleDone = (id) => {
+    dispatch(changeDone(id))
+    dispatch(fetchTodos())
+  }
+  const handleNotDone = (id) => {
+    dispatch(changeNotDone(id))
+    dispatch(fetchTodos())
   }
 
   useEffect(() => {
@@ -36,8 +56,21 @@ function App() {
           <li key={todo.id}>
             <span>{todo.text}</span>
             <div className="buttonHolder">
-              <button className="done">Done</button>
-              <button className="remove">Remove</button>
+              {todo.done ? (
+                <button className="done" onClick={() => handleDone(todo.id)}>
+                  Done
+                </button>
+              ) : (
+                <button
+                  className="notdone"
+                  onClick={() => handleNotDone(todo.id)}
+                >
+                  Not Done
+                </button>
+              )}
+              <button className="remove" onClick={() => handleRemove(todo.id)}>
+                Remove
+              </button>
             </div>
           </li>
         ))}
