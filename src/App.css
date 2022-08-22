@@ -1,8 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* background: radial-gradient(rgb(130, 179, 220), rgb(53, 155, 251)); */
+  background-color: rgb(244, 223, 69);
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.todoHeader {
+  font-size: 36px;
+  color: rgb(236, 19, 110);
+  text-shadow: 5px 5px rgb(255, 241, 241);
 }
 
 .App {
@@ -16,13 +23,15 @@ ul,
   list-style: none;
   width: 60%;
 }
+ul {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid rgb(236, 19, 110);
+}
 .addNav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-input {
-  width: 500px;
 }
 
 li {
@@ -36,20 +45,45 @@ li {
 button {
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding: 5px;
   margin: 10px;
+  border-style: none;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  width: 90px;
+  height: 40px;
+}
+
+input {
+  width: 500px;
+  height: 50px;
+  border-radius: 10px;
+  border-style: none;
+  padding-left: 15px;
+  border: 2px solid rgb(236, 19, 110);
 }
 .done {
-  color: green;
-  border: 1px solid green;
+  background-color: rgb(0, 191, 0);
+  color: #fff;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 .remove {
-  color: red;
-  border: 1px solid red;
+  color: #fff;
+  border: 1px solid rgb(236, 19, 110);
+  background-color: rgb(236, 19, 110);
+  opacity: 0.6;
+  transition: 0.3s;
 }
+button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .notdone {
-  color: gray;
-  border: 1px solid gray;
+  color: #fff;
+  background-color: gray;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
 .textDone {
@@ -57,7 +91,18 @@ button {
   text-decoration: line-through;
 }
 .addbtn {
-  padding: 5px;
-  width: 70px;
-  margin: 0 1rem;
+  color: rgb(236, 19, 110);
+  border: 2px solid rgb(236, 19, 110);
+}
+.addbtn:hover {
+  color: #fff;
+  background-color: rgb(236, 19, 110);
+}
+li:hover {
+  background-color: rgb(244, 243, 243);
+
+  border-radius: 10px;
+}
+li:last-child {
+  border: none;
 }
